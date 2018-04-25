@@ -51,7 +51,6 @@ namespace SerializeExample
             TextWriter writer = new StreamWriter(filename);
             xmlSerial.Serialize(writer, Adventure);
 
-
         }
     }
     public class Employees : ICollection
