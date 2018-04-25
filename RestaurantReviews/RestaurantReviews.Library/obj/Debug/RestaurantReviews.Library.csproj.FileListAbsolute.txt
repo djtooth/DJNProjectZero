@@ -1,0 +1,7 @@
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RestaurantReviews.Library.exe.config
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RestaurantReviews.Library.exe
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RestaurantReviews.Library.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.exe
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.pdb
