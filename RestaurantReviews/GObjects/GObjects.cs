@@ -99,7 +99,7 @@ namespace GObjects
         string file1 = "ReviewXML.xml";
         string file2 = "RestaurantXML.xml";
         ObjCollector<Review> ReviewCollection = new ObjCollector<Review>();
-        ObjCollector<Restaurant> RestaurantCollection = new ObjCollector<Restaurant>();
+        ObjCollector<Restaurant> RestaurantCollection = new ObjCollector<Restaurant>;
         objSerializer<Review> reviewSerializer = new objSerializer<Review>();
         objSerializer<Restaurant> restaurantSerializer = new objSerializer<Restaurant>();
         public Tester ()
