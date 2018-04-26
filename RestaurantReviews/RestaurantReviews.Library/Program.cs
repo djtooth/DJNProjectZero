@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using System.IO;
+using GObjects;
 
 namespace RestaurantReviews.Library
 {
@@ -13,16 +13,8 @@ namespace RestaurantReviews.Library
     {
         static void Main(string[] args)
         {
-            
-            //Test<Review> t = new Test<Review>();
-            //t.SerializeCollection("ReviewXML.xml");
+            Tester test = new Tester();
+
         }
-
-       
-
-
     }
-    
-
-
 }

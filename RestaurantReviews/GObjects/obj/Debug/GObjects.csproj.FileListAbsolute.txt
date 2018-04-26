@@ -1,0 +1,10 @@
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\GObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\GObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\RRObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\RRObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\RRObjects.dll.config
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.csproj.CopyComplete
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.pdb

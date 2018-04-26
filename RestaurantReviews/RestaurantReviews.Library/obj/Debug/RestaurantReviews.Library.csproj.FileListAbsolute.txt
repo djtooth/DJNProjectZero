@@ -5,3 +5,9 @@ C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantRev
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.csproj.CoreCompileInputs.cache
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.exe
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\GObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RRObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\GObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RRObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\bin\Debug\RRObjects.dll.config
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RestaurantReviews.Library\obj\Debug\RestaurantReviews.Library.csproj.CopyComplete

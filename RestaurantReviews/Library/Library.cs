@@ -6,6 +6,7 @@ namespace Library
 {
     public class Library
     {
+        //Obsolete Code
         List<Review> reviews = new List<Review>();
         List<Restaurant> restaurants = new List<Restaurant>();
 
@@ -23,7 +24,7 @@ namespace Library
 
         }
 
-        public double AverageRating(List<Review> a, Restaurant b)
+    public double AverageRating(List<Review> a, Restaurant b)
         {
             int qauntity = 0;
             double average = 0;

@@ -5,15 +5,15 @@ namespace ObjectsNameSpace
 
     public abstract class Object
     {
-        protected const int digits = 5;
-        public string Name { get; set; }
-        public String IDnumber { get; set; }
+        protected const int digits = 5;//Set # of digits that the ID# Contain
+        public string Name { get; set; }//Name of Reviewer or Restaurant
+        public String IDnumber { get; set; }// Unique Identifier
     }
 
     public class Restaurant : Object
     {
-        static int tracker = 0;
-        public string Location { get; set; }
+        static int tracker = 0;//Ensures all Restaurants have a Unique Id#
+        public string Location { get; set; }// Location of building
         public Restaurant() { }
         public Restaurant(string name, string location)
         {
@@ -28,7 +28,7 @@ namespace ObjectsNameSpace
 
     public class Review : Object
     {
-        static int tracker = 0;
+        static int tracker = 0;//Ensures all Reviews have a Unique Id#
         public Review() { }
         public Review(string text, string restaurantID, double rating, string name)
         {
@@ -42,8 +42,10 @@ namespace ObjectsNameSpace
             tracker++;
 
         }
-        public string text { get; set; }
-        public string restaurantID { get; set; }
-        public double rating { get; set; }
+        public string text { get; set; }// Body of Review
+        public string restaurantID { get; set; }//RestaurantId #
+        public double rating { get; set; }// Rating of Restaurant given by reviewer
     }
+
+
 }

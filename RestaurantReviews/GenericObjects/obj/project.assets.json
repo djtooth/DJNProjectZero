@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "ObjectsNameSpace/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ObjectsNameSpace.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObjectsNameSpace.dll": {}
+        }
       }
     }
   },
@@ -656,11 +666,17 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "ObjectsNameSpace/1.0.0": {
+      "type": "project",
+      "path": "../ObjectsNameSpace/ObjectsNameSpace.csproj",
+      "msbuildProject": "../ObjectsNameSpace/ObjectsNameSpace.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "ObjectsNameSpace >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -695,7 +711,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\David\\Documents\\Revature\\DJNProjectZero\\RestaurantReviews\\ObjectsNameSpace\\ObjectsNameSpace.csproj": {
+              "projectPath": "C:\\Users\\David\\Documents\\Revature\\DJNProjectZero\\RestaurantReviews\\ObjectsNameSpace\\ObjectsNameSpace.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
