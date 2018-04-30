@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,28 +11,33 @@ namespace LibraryLogic
     public class Library
     {
         //Obsolete Code
-        List<Review> reviews = new List<Review>();
-        List<Restaurant> restaurants = new List<Restaurant>();
+        //List<Review> reviews = new List<Review>();
+        //List<Restaurant> restaurants = new List<Restaurant>();
 
-        Library(int reviewers, int inputrestaurants)
+        //Library(int reviewers, int inputrestaurants)
+        //{
+        //    for (int i = 0; i < reviewers; i++)
+        //    {
+        //        reviews.Add(new Review());
+        //    }
+
+        //    for (int i = 0; i < inputrestaurants; i++)
+        //    {
+        //        restaurants.Add(new Restaurant());
+        //    }
+
+            public Library()
         {
-            for (int i = 0; i < reviewers; i++)
-            {
-                reviews.Add(new Review());
-            }
-
-            for (int i = 0; i < inputrestaurants; i++)
-            {
-                restaurants.Add(new Restaurant());
-            }
 
         }
 
-        public double AverageRating(List<Review> a, Restaurant b)
+        
+
+        public double AverageRating(ArrayList reviews, Restaurant b)
         {
             int qauntity = 0;
             double average = 0;
-            foreach (Review element in a)
+            foreach (Review element in reviews)
             {
                 if (b.Name == element.restaurantID)
                 {
@@ -42,7 +48,7 @@ namespace LibraryLogic
             return average / qauntity;
         }
 
-        public void TopThree(List<Review> a, List<Restaurant> b)
+        public void TopThree(ArrayList a, ArrayList b)
         { // top what restrants
             int topX = 3;
             double tempaverage;
@@ -60,7 +66,6 @@ namespace LibraryLogic
                     //checks if the current restaurant is higher rated than the top three
                     for (int i = topX; i > 0; i--)
                     {
-
                         if (tempaverage > top[i - 1])
                         {
                             top[i - 1] = tempaverage;
@@ -77,29 +82,65 @@ namespace LibraryLogic
             }
             for (int i = 0; i < topX; i++)
             {
-                Console.WriteLine($"#{i} {topname[i]}: {top[i]}");
+                Console.WriteLine($"#{i+1} {topname[i]}: {top[i]}");
             }
-
         }
 
-        public void DisplayAll(Restaurant[] restaurant)
+        public void DisplayAll(ArrayList restaurant)
         {
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("ID | Name | Location ");
+            Console.WriteLine("-------------------------------");
 
             foreach (Restaurant element in restaurant)
-                Console.WriteLine($"");
+            {
+                Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.IDnumber, element.Name, element.Location));
+            }
+            Console.WriteLine("-------------------------------");
         }
 
-        public void DisplayReviews(Restaurant[] restaurant)
+        //Displays all reviews of a restaurant
+        public void DisplayReviews(ArrayList reviews, Restaurant restaurant)
         {
-
+            Console.WriteLine("ID | Name | Restaurant Name | Rating | Text ");
+            foreach (Review element in reviews)
+            {
+                if (element.restaurantID == restaurant.IDnumber)
+                {
+                    Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,-10} | {3,-10} | {4,-5}",
+                        element.IDnumber, element.Name, element.restaurantID, element.rating, element.text));
+                }
+            }
         }
-        public void SearchRestaurants(Restaurant restaurant)
+        //Search Restaurants (By partial name), display all matching results
+        public void SearchRestaurants(ArrayList restaurant,string target)
         {
-
+            string compare;
+            int found = 0;
+            foreach(Restaurant element in restaurant)
+            {
+                compare = element.Name.ToUpper();
+                if (compare.Contains(target.ToUpper()))
+                {
+                    found++;
+                    if (found == 1)
+                    {
+                        Console.WriteLine("-------------------------------");
+                        Console.WriteLine("ID | Name | Location ");
+                        Console.WriteLine("-------------------------------");
+                    }
+                    Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.IDnumber, element.Name, element.Location));
+                }
+            }
+            if (found == 0)
+                Console.WriteLine($"{target} could not be found in the restaurants.");
         }
+
+        //Quits application
         public void QuitApp()
         {
-
+            Console.ReadKey();
+            System.Environment.Exit(0);
         }
 
 

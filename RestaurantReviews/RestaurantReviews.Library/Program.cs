@@ -14,7 +14,6 @@ namespace RestaurantReviews.Library
         static void Main(string[] args)
         {
             Tester test = new Tester();
-
         }
     }
 }

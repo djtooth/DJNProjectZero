@@ -8,3 +8,5 @@ C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.csproj.CopyComplete
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.dll
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\obj\Debug\GObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\LibraryLogic.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\GObjects\bin\Debug\LibraryLogic.pdb

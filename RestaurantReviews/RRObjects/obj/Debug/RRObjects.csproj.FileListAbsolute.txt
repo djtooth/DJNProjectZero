@@ -4,3 +4,4 @@ C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RRObjects\bin
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RRObjects\obj\Debug\RRObjects.csproj.CoreCompileInputs.cache
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RRObjects\obj\Debug\RRObjects.dll
 C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RRObjects\obj\Debug\RRObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\RRObjects\obj\Debug\RRObjects.csprojResolveAssemblyReference.cache

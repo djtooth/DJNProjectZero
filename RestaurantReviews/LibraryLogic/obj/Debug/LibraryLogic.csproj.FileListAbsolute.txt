@@ -1,0 +1,10 @@
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\bin\Debug\LibraryLogic.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\bin\Debug\LibraryLogic.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\bin\Debug\RRObjects.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\bin\Debug\RRObjects.pdb
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\bin\Debug\RRObjects.dll.config
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\obj\Debug\LibraryLogic.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\obj\Debug\LibraryLogic.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\obj\Debug\LibraryLogic.csproj.CopyComplete
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\obj\Debug\LibraryLogic.dll
+C:\Users\David\Documents\Revature\DJNProjectZero\RestaurantReviews\LibraryLogic\obj\Debug\LibraryLogic.pdb

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 using RRObjects;
+using LibraryLogic;
 
 namespace GObjects
 {
@@ -16,10 +17,14 @@ namespace GObjects
         public List<string> last = new List<string>(new string[] { "Ysolda", "Jood ", "Steakson", "Meatingsmith!", "Green", "Apparently" });
     }
 
-
     public class ObjCollector<T> : ICollection
     {
         private ArrayList objCollect = new ArrayList();
+
+        public ArrayList sendList()
+        {
+            return objCollect;
+        }
 
         public T this[int index]
         {
@@ -62,6 +67,14 @@ namespace GObjects
             TextWriter writer = new StreamWriter(filename);
             xmlSerial.Serialize(writer, OCollection);
         }
+
+        public ObjCollector<O> DeserializeCollection(string filename, ObjCollector<O> OCollection)
+        {
+            XmlSerializer xmlSerial = new XmlSerializer(typeof(ObjCollector<O>));
+            TextReader reader = new StreamReader(filename);
+            OCollection = (ObjCollector < O >)xmlSerial.Deserialize(reader);
+            return OCollection;
+        }
     }
 
     public class Superconstructor
@@ -90,7 +103,6 @@ namespace GObjects
                     reviewCollection.Add(tReview);
                 }
             }
-
         }
     }
 
@@ -99,14 +111,27 @@ namespace GObjects
         string file1 = "ReviewXML.xml";
         string file2 = "RestaurantXML.xml";
         ObjCollector<Review> ReviewCollection = new ObjCollector<Review>();
-        ObjCollector<Restaurant> RestaurantCollection = new ObjCollector<Restaurant>;
+        ObjCollector<Restaurant> RestaurantCollection = new ObjCollector<Restaurant>();
         objSerializer<Review> reviewSerializer = new objSerializer<Review>();
         objSerializer<Restaurant> restaurantSerializer = new objSerializer<Restaurant>();
+        Library Library = new Library();
         public Tester ()
         {
             Superconstructor Bob = new Superconstructor(ref ReviewCollection, ref RestaurantCollection);
-            reviewSerializer.SerializeCollection(file1, ReviewCollection);
-            restaurantSerializer.SerializeCollection(file2, RestaurantCollection);
+
+           // reviewSerializer.DeserializeCollection("ReviewXML.xml", ReviewCollection);
+            //restaurantSerializer.DeserializeCollection("RestaurantXML.xml", RestaurantCollection);
+
+            Library.TopThree(ReviewCollection.sendList(), RestaurantCollection.sendList());
+            Library.DisplayAll(RestaurantCollection.sendList());
+            Library.DisplayReviews(ReviewCollection.sendList(), RestaurantCollection[1]);
+            Library.SearchRestaurants(RestaurantCollection.sendList(), "yum");
+            Console.WriteLine(RestaurantCollection[2].Name + ": AvgRating: "
+                + Library.AverageRating(ReviewCollection.sendList(), RestaurantCollection[2]));
+            Library.QuitApp();
+
+            //reviewSerializer.SerializeCollection(file1, ReviewCollection);
+            //restaurantSerializer.SerializeCollection(file2, RestaurantCollection);
         }
 
 
