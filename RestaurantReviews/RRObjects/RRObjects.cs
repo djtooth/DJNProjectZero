@@ -43,7 +43,6 @@ namespace RRObjects
             while (digits > IDnumber.Length)
                 IDnumber = "0" + IDnumber;
             tracker++;
-
         }
         public string text { get; set; }// Body of Review
         public string restaurantID { get; set; }//RestaurantId #
