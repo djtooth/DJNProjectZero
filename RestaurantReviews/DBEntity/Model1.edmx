@@ -27,8 +27,9 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Text" Type="nvarchar" MaxLength="500" />
-          <Property Name="RestaurantID" Type="nvarchar" MaxLength="5" />
+          <Property Name="RestaurantID" Type="int" />
           <Property Name="Rating" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK__Relation__Restau__3B75D760">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
@@ -86,9 +87,10 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="RestaurantID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="RestaurantID" Type="Int32" />
           <Property Name="Rating" Type="Int32" />
           <NavigationProperty Name="Relations" Relationship="RestaurantDBModel.FK__Relation__Review__3A81B327" FromRole="Review" ToRole="Relation" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="RestaurantDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
@@ -106,8 +108,6 @@
         <EntityType Name="Relation">
           <Key>
             <PropertyRef Name="RelationID" />
-            <PropertyRef Name="ReviewID" />
-            <PropertyRef Name="RestaurantID" />
           </Key>
           <Property Name="RelationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ReviewID" Type="Int32" Nullable="false" />
@@ -157,6 +157,7 @@
           <EntitySetMapping Name="Reviews">
             <EntityTypeMapping TypeName="RestaurantDBModel.Review">
               <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
                 <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />

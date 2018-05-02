@@ -68,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DBEntity\DBEntity.csproj">
+      <Project>{b51a35a7-b09d-4168-b5be-006eae2d2bb0}</Project>
+      <Name>DBEntity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibraryLogic\LibraryLogic.csproj">
       <Project>{ddd968a0-24f1-4093-a6f1-e3b7fdb84f85}</Project>
       <Name>LibraryLogic</Name>

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RRObjects;
+using DBEntity;
+
 
 namespace LibraryLogic
 {
@@ -30,22 +31,25 @@ namespace LibraryLogic
         {
 
         }
-
-        
+             
 
         public double AverageRating(ArrayList reviews, Restaurant b)
         {
             int qauntity = 0;
-            double average = 0;
+            int sum = 0;
+            double average;
             foreach (Review element in reviews)
             {
-                if (b.Name == element.restaurantID)
+                if (b.ID == element.RestaurantID)
                 {
-                    average += element.rating;
+                    sum += (int)element.Rating;
                     qauntity++;
                 }
             }
-            return average / qauntity;
+            if (qauntity == 0)
+                return 0;
+            average = sum / qauntity;
+            return average;
         }
 
         public void TopThree(ArrayList a, ArrayList b)
@@ -86,15 +90,19 @@ namespace LibraryLogic
             }
         }
 
-        public void DisplayAll(ArrayList restaurant)
+        public void DisplayAll(ArrayList restaurant, int sort)
         {
+            if (sort == 1)
+                restaurant = Namesort(restaurant);
+
+
             Console.WriteLine("-------------------------------");
             Console.WriteLine("ID | Name | Location ");
             Console.WriteLine("-------------------------------");
 
             foreach (Restaurant element in restaurant)
             {
-                Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.IDnumber, element.Name, element.Location));
+                Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.ID, element.Name, element.Location));
             }
             Console.WriteLine("-------------------------------");
         }
@@ -105,13 +113,36 @@ namespace LibraryLogic
             Console.WriteLine("ID | Name | Restaurant Name | Rating | Text ");
             foreach (Review element in reviews)
             {
-                if (element.restaurantID == restaurant.IDnumber)
+                if (element.RestaurantID == restaurant.ID)
                 {
                     Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,-10} | {3,-10} | {4,-5}",
-                        element.IDnumber, element.Name, element.restaurantID, element.rating, element.text));
+                        element.ID, element.Name, element.RestaurantID, element.Rating, element.Text));
                 }
             }
         }
+
+        internal ArrayList Namesort(ArrayList restaurant)
+        {
+            ArrayList temp = new ArrayList();
+            int lowest;
+            while(restaurant.Count > 0)
+            {
+                lowest = -1;
+                for(int i = 0; i <restaurant.Count; i++)
+                {
+                    if (lowest == -1)
+                        lowest = 0;
+                    if (0 > (((Restaurant)restaurant[i]).Name.CompareTo(((Restaurant)restaurant[lowest]).Name)))
+                        lowest = i;
+                }
+                temp.Add(restaurant[lowest]);
+                restaurant.RemoveAt(lowest);
+            }
+            return temp;
+        }
+
+
+
         //Search Restaurants (By partial name), display all matching results
         public void SearchRestaurants(ArrayList restaurant,string target)
         {
@@ -129,7 +160,7 @@ namespace LibraryLogic
                         Console.WriteLine("ID | Name | Location ");
                         Console.WriteLine("-------------------------------");
                     }
-                    Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.IDnumber, element.Name, element.Location));
+                    Console.WriteLine(String.Format("{0,-10} | {1,-10} | {2,5}", element.ID, element.Name, element.Location));
                 }
             }
             if (found == 0)

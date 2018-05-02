@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using RRObjects;
+//using RRObjects;
 using LibraryLogic;
+using DBEntity;
 
 namespace GObjects
 {
@@ -19,11 +20,17 @@ namespace GObjects
 
     public class ObjCollector<T> : ICollection
     {
-        private ArrayList objCollect = new ArrayList();
+        public ArrayList objCollect = new ArrayList();
 
-        public ArrayList sendList()
+        public void setList(ArrayList newArr)
         {
-            return objCollect;
+            objCollect = newArr;
+        }
+
+        public ArrayList getList()
+        {
+
+            return (ArrayList)objCollect.Clone();
         }
 
         public T this[int index]
@@ -77,34 +84,35 @@ namespace GObjects
         }
     }
 
-    public class Superconstructor
-    {
+    ////Outdated Method that would populate the Review and Restaurant Lists
+    //public class Superconstructor
+    //{
 
-        public Superconstructor(ref ObjCollector<Review> reviewCollection, ref ObjCollector<Restaurant> resterauntsCollection)
-        {
-            nameList Names = new nameList();
-            Review tReview = new Review();
-            Restaurant tRestaurant = new Restaurant();
-            for (int i = 0; i < Names.beginning.Count; i++)
-            {
-                for (int o = 0; o < Names.ending.Count; o++)
-                {
-                    tRestaurant = new Restaurant((Names.beginning[i] + Names.ending[o]), "Texas");
-                    resterauntsCollection.Add(tRestaurant);
-                }
-            }
+    //    public Superconstructor(ref ObjCollector<Review> reviewCollection, ref ObjCollector<Restaurant> resterauntsCollection)
+    //    {
+    //        nameList Names = new nameList();
+    //        Review tReview = new Review();
+    //        Restaurant tRestaurant = new Restaurant();
+    //        for (int i = 0; i < Names.beginning.Count; i++)
+    //        {
+    //            for (int o = 0; o < Names.ending.Count; o++)
+    //            {
+    //                tRestaurant = new Restaurant((Names.beginning[i] + Names.ending[o]), "Texas");
+    //                resterauntsCollection.Add(tRestaurant);
+    //            }
+    //        }
 
-            for (int i = 0; i < Names.first.Count; i++)
-            {
-                for (int o = 0; o < Names.last.Count; o++)
-                {
-                    tReview = new Review("To do", resterauntsCollection[(i + o) % (Names.beginning.Count
-                        + Names.ending.Count)].IDnumber, i + o, (Names.first[i] + Names.last[o]));
-                    reviewCollection.Add(tReview);
-                }
-            }
-        }
-    }
+    //        for (int i = 0; i < Names.first.Count; i++)
+    //        {
+    //            for (int o = 0; o < Names.last.Count; o++)
+    //            {
+    //                tReview = new Review("To do", resterauntsCollection[(i + o) % (Names.beginning.Count
+    //                    + Names.ending.Count)].IDnumber, i + o, (Names.first[i] + Names.last[o]));
+    //                reviewCollection.Add(tReview);
+    //            }
+    //        }
+    //    }
+    //}
 
     public class Tester
     {
@@ -115,19 +123,38 @@ namespace GObjects
         objSerializer<Review> reviewSerializer = new objSerializer<Review>();
         objSerializer<Restaurant> restaurantSerializer = new objSerializer<Restaurant>();
         Library Library = new Library();
+        DataAccess access = new DataAccess();
         public Tester ()
         {
-            Superconstructor Bob = new Superconstructor(ref ReviewCollection, ref RestaurantCollection);
+            //Superconstructor Bob = new Superconstructor(ref ReviewCollection, ref RestaurantCollection);
 
-           // reviewSerializer.DeserializeCollection("ReviewXML.xml", ReviewCollection);
+            //reviewSerializer.DeserializeCollection("ReviewXML.xml", ReviewCollection);
             //restaurantSerializer.DeserializeCollection("RestaurantXML.xml", RestaurantCollection);
 
-            Library.TopThree(ReviewCollection.sendList(), RestaurantCollection.sendList());
-            Library.DisplayAll(RestaurantCollection.sendList());
-            Library.DisplayReviews(ReviewCollection.sendList(), RestaurantCollection[1]);
-            Library.SearchRestaurants(RestaurantCollection.sendList(), "yum");
+            //access.CreateRecords();
+            RestaurantCollection.setList(access.getRestaurants());
+            ReviewCollection.setList(access.getReviews());
+
+            Console.WriteLine("*Top Three*");
+            Library.TopThree(ReviewCollection.getList(), RestaurantCollection.getList());
+
+            Console.WriteLine("*Display All (Name Sort)*");
+            Library.DisplayAll(RestaurantCollection.getList(),1);
+
+            Console.WriteLine("*Display All (ID Sort)*");
+            Library.DisplayAll(RestaurantCollection.getList(), 1);
+
+            Console.WriteLine("*Display Reviews (index 2)*");
+            Library.DisplayReviews(ReviewCollection.getList(), RestaurantCollection[1]);
+
+            Console.WriteLine("*Search for 'Nach'*");
+            Library.SearchRestaurants(RestaurantCollection.getList(), "nach");
+
+            Console.WriteLine("*Average rating of index 3*");
             Console.WriteLine(RestaurantCollection[2].Name + ": AvgRating: "
-                + Library.AverageRating(ReviewCollection.sendList(), RestaurantCollection[2]));
+                + Library.AverageRating(ReviewCollection.getList(), RestaurantCollection[2]));
+
+            Console.WriteLine("*Qutting Application*");
             Library.QuitApp();
 
             //reviewSerializer.SerializeCollection(file1, ReviewCollection);
@@ -137,4 +164,6 @@ namespace GObjects
 
 
     }
+
+
 }
